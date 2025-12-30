@@ -62,11 +62,6 @@ npm install
 # Start the development server
 npm run dev
 
-
-Open the browser at:
-
-http://localhost:5173
-
 Usage
 
 Click a node to view its details in the side panel
