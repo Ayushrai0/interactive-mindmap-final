@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 217 33% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Mindmap Node Colors */
+    --node-root: 217 91% 60%;
+    --node-root-glow: 217 91% 70%;
+    --node-level-1: 160 84% 39%;
+    --node-level-1-glow: 160 84% 50%;
+    --node-level-2: 38 92% 50%;
+    --node-level-2-glow: 38 92% 60%;
+    --node-level-3: 262 83% 58%;
+    --node-level-3-glow: 262 83% 68%;
+    --node-level-4: 340 82% 52%;
+    --node-level-4-glow: 340 82% 62%;
+
+    /* Edge colors */
+    --edge-default: 217 33% 35%;
+    --edge-highlighted: 217 91% 60%;
+
+    /* Panel */
+    --panel-bg: 222 47% 7%;
+    --panel-border: 217 33% 18%;
+
+    /* Grid */
+    --grid-color: 217 33% 12%;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 20%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .mindmap-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, hsl(var(--grid-color)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--grid-color)) 1px, transparent 1px);
+  }
+
+  .node-glow-root {
+    box-shadow: 0 0 20px hsl(var(--node-root-glow) / 0.4),
+                0 0 40px hsl(var(--node-root-glow) / 0.2);
+  }
+
+  .node-glow-1 {
+    box-shadow: 0 0 15px hsl(var(--node-level-1-glow) / 0.4),
+                0 0 30px hsl(var(--node-level-1-glow) / 0.2);
+  }
+
+  .node-glow-2 {
+    box-shadow: 0 0 15px hsl(var(--node-level-2-glow) / 0.4),
+                0 0 30px hsl(var(--node-level-2-glow) / 0.2);
+  }
+
+  .node-glow-3 {
+    box-shadow: 0 0 15px hsl(var(--node-level-3-glow) / 0.4),
+                0 0 30px hsl(var(--node-level-3-glow) / 0.2);
+  }
+
+  .node-glow-4 {
+    box-shadow: 0 0 15px hsl(var(--node-level-4-glow) / 0.4),
+                0 0 30px hsl(var(--node-level-4-glow) / 0.2);
+  }
+
+  .glass-panel {
+    @apply bg-panel-bg/80 backdrop-blur-xl border border-panel-border;
+  }
+
+  .toolbar-btn {
+    @apply flex items-center gap-2 px-3 py-2 rounded-lg 
+           bg-secondary/50 hover:bg-secondary text-foreground/80 
+           hover:text-foreground transition-all duration-200
+           border border-transparent hover:border-border;
+  }
+
+  .toolbar-btn-primary {
+    @apply toolbar-btn bg-primary/20 hover:bg-primary/30 
+           text-primary border-primary/30;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+}
