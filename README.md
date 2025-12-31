@@ -1,17 +1,30 @@
-Interactive Mindmap Visualization
-Project Overview
+Interactive Mindmap Visualizer
+Overview
 
-This project is a data-driven interactive mindmap UI designed to visualize hierarchical information in a clear and intuitive way. Users can explore complex structures through expandable nodes, contextual tooltips, and a detailed documentation panel. The focus of the project is usability, clean interactions, and scalable frontend architecture.
+This project is a data-driven interactive Mindmap UI built to visualize hierarchical information in a clear, intuitive, and scalable manner.
+The application focuses on rich user interactions, clean UX, and a maintainable frontend architecture with a strict separation between data and presentation logic.
+
+The implementation closely follows the functional behavior and interaction patterns specified in the assignment.
+
+Objectives
+
+Visualize hierarchical data as an interactive mindmap
+
+Enable intuitive exploration through hover, click, and edit interactions
+
+Ensure the entire UI is generated dynamically from structured data
+
+Maintain clean, scalable, and readable frontend code
 
 Key Features
 
-Interactive mindmap with parent–child relationships
+Hierarchical mindmap visualization (parent → child relationships)
 
 Expand and collapse nodes dynamically
 
-Hover tooltips with quick node summaries
+Hover tooltips with contextual summaries
 
-Strong visual highlighting of related nodes and edges
+Visual highlighting of related nodes and edges
 
 Side panel displaying detailed node documentation
 
@@ -21,26 +34,84 @@ Inline editing of node titles and summaries
 
 Zoom, pan, and fit-to-view controls
 
-Export mindmap data as JSON
+Export current mindmap data as JSON (bonus feature)
+
+Demo Video
+
+A short demo video demonstrating all required interactions and features:
+
+👉 Demo Video:
+https://drive.google.com/file/d/1NMwxuLJBDDEEadh0Z7bJCGfQX7XUBHw4/view?usp=drive_link
+
+The video demonstrates:
+
+Full mindmap rendering from structured data
+
+Hover and click interactions
+
+Expand and collapse behavior
+
+Side panel updates based on selection
+
+Inline editing of nodes
+
+Zoom, pan, and fit-to-view controls
 
 Tech Stack
 
-React – UI development
+React – Component-based UI development
 
 TypeScript – Type safety and maintainability
 
-Vite – Fast development environment
+Vite – Fast development and build tooling
 
-React Flow (@xyflow/react) – Graph and node rendering
+React Flow (@xyflow/react) – Graph rendering and interaction handling
 
-Tailwind CSS – Styling and layout
+Tailwind CSS – Utility-first styling
 
-shadcn/ui – UI components
+shadcn/ui – Reusable and accessible UI components
 
-Data-Driven Architecture
+Data-Driven Architecture (Core Requirement)
 
-The entire mindmap is generated from structured data (JSON).
-Updating the data file—such as adding nodes, changing text, or modifying hierarchy—automatically updates the visualization without changing UI logic. This ensures a clean separation between data and presentation, making the system scalable and easy to maintain.
+The entire mindmap is generated from structured JSON data.
+
+No nodes or relationships are hardcoded in the UI
+
+Rendering is completely schema-driven
+
+Updating only the data file automatically updates:
+
+Node titles and descriptions
+
+Hierarchy and structure
+
+Metadata shown in tooltips and documentation panel
+
+Examples:
+
+Adding a node in JSON → new node appears in the UI
+
+Updating text in JSON → UI reflects changes automatically
+
+Modifying hierarchy → layout updates without UI code changes
+
+This ensures a clean separation between data and UI logic, making the system scalable and easy to maintain.
+
+Architecture & Data Flow
+
+JSON data is loaded at application startup
+
+Data is parsed into a hierarchical tree structure
+
+Layout logic computes node positions
+
+Nodes and edges are rendered dynamically
+
+User interactions update application state
+
+Tooltips and side panel react to selected node state
+
+This architecture allows easy extension without modifying core visualization logic.
 
 Running the Project Locally
 Prerequisites
@@ -51,10 +122,10 @@ npm
 
 Steps
 # Clone the repository
-git clone https://github.com/Ayushrai0/knowledge-tree-interactive.git
+git clone https://github.com/Ayushrai0/interactive-mindmap-final.git
 
 # Navigate to the project directory
-cd knowledge-tree-interactive
+cd interactive-mindmap-final
 
 # Install dependencies
 npm install
@@ -64,30 +135,40 @@ npm run dev
 
 Usage
 
-Click a node to view its details in the side panel
+Click a node to view detailed information in the side panel
 
 Hover over a node to see a quick summary tooltip
 
-Use toolbar controls to expand, collapse, zoom, or fit the view
+Expand or collapse branches interactively
 
-Edit node content directly from the UI
+Use toolbar controls to zoom, pan, or fit the view
 
-Open Full Documentation for a detailed view of the selected node
+Edit node titles and summaries directly from the UI
 
-Export the current mindmap data as JSON
+Open the full documentation view for in-depth exploration
+
+Export the current mindmap structure as JSON
+
+Repository
+
+GitHub Repository (Complete source code and documentation):
+👉 https://github.com/Ayushrai0/interactive-mindmap-final
 
 Future Improvements
 
-Add search functionality for large mindmaps
+Search functionality for large mindmaps
 
-Support exporting the visualization as an image (PNG/SVG)
+Export visualization as PNG/SVG
 
-Improve keyboard accessibility
+Improved keyboard accessibility
 
-Add undo/redo support for edits
+Undo/redo support for edits
 
-Optimize layout for very large datasets
+Performance optimization for very large datasets
 
 Submission Summary
 
-This project demonstrates a practical approach to building a scalable, data-driven frontend application. Emphasis was placed on clean UI interactions, maintainable structure, and clarity of visualization rather than hardcoded content or pixel-perfect design.
+This project demonstrates a practical and thoughtful approach to building a scalable, data-driven frontend application.
+The focus is on interaction quality, maintainable architecture, and clarity of visualization rather than hardcoded content or pixel-perfect styling.
+
+The solution fulfills all mandatory requirements and includes additional enhancements to improve usability and extensibility.
